@@ -69,3 +69,5 @@ You will get to know what exactly happens, from the logs.
 1) Now it just has a place from where we can call other modules to do tasks we want to be done on receving message from queue. We want to make this part modular and pluggable in such a way that, people will have to just write a plugin file and drop it inside and it will be fetched by the system as a 'TO DO TASK' when message is received in queue. After this feature. people need not touch the main core code in order to add integrations. Just drop files at a specific location, and it should be that simple.
 
 
+
+Note: If you are using rabbitmq in place of  Amazons Simple Queuing, use this repository https://github.com/HarishAtGitHub/rabbitmq-message-parser-in-python
