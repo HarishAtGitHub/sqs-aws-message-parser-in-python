@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<tasks>
+    <task>
+        <filename>task1</filename>
+        <classname>Task1</classname>
+        <default>false</default>
+    </task>
+     <task>
+        <filename>task2</filename>
+        <classname>Task2</classname>
+         <default>false</default>
+    </task>
+     <task>
+        <filename>task3</filename>
+        <classname>Task3</classname>
+         <default>false</default>
+    </task>
+    <task>
+        <filename>task4</filename>
+        <classname>Task4</classname>
+        <default>true</default>
+    </task>
+</tasks>

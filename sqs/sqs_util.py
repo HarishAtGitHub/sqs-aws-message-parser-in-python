@@ -89,3 +89,29 @@ class SQS:
             ReceiptHandle=receipt_handle
         )
 
+    @classmethod
+    def send_msg_to_deadletter_q(cls, message_body, past_results):
+        connection = cls.get_connection()
+        connection.send_message(
+            QueueUrl=cls.get_deadletter_q_url(),
+            MessageBody=message_body,
+            DelaySeconds=0,
+            MessageAttributes={
+                'past_results' : {
+                    'DataType': 'String',
+                    'StringValue' : str(past_results),
+
+                }
+
+            }
+        )
+
+    @classmethod
+    def delete_msg_and_repost_to_deadletter_q(cls, receipt_handle, message_body, past_results):
+        # this defeats the purpose of deadletter queue
+        # but we defeated it for the purpose of selectively running failed tasks
+        cls.delete_msg_from_main_q(receipt_handle)
+        cls.send_msg_to_deadletter_q(message_body, past_results)
+
+
+

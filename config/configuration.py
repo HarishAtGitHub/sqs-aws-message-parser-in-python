@@ -22,3 +22,7 @@ LOG_LEVEL='INFO'
 NO_OF_REQUESTS_CONSUMERS=3
 NO_OF_REJECTS_CONSUMERS=2
 POOL_SIZE=5
+
+# TASK CONFIGURATION
+# ============================================================================
+TASKS_XML_FILE = 'tasks.xml'
