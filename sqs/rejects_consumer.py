@@ -59,9 +59,9 @@ class RejectsConsumer(Consumer):
             return
         logger.info(" Message received from rejects queue : %s" % body)
         if not tast_list:
-            results = TaskExecutor.execute()
+            results = TaskExecutor.execute(data=body)
         else:
-            results = TaskExecutor.execute(tast_list)
+            results = TaskExecutor.execute(data=body, tast_list=tast_list)
         success = True
         for i in results:
             for key, value in i.items():
@@ -77,4 +77,4 @@ class RejectsConsumer(Consumer):
                          " so will post it to slack and delete it from rejects queue ")
             SQS.delete_msg_from_deadletter_q(receipt_handle=receipt_handle)
             # FIXME: what if default channel is bad
-            TaskExecutor.execute(default=True)
+            TaskExecutor.execute(data=body, default=True)

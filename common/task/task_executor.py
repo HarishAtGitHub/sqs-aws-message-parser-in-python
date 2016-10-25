@@ -6,7 +6,7 @@ from logger.logger_util import *
 class TaskExecutor:
 
     @classmethod
-    def execute(cls, tast_list = None, default=False):
+    def execute(cls, data, tast_list = None, default=False):
 
         logger = getLogger()
         tasks = cls.get_tasks(default=default)
@@ -16,11 +16,11 @@ class TaskExecutor:
                 # FIXME : The loop can be made correct
                 if(tast_list != None):
                     if(task.__name__ in tast_list):
-                        result = task.run()
+                        result = task.run(data)
                     else:
                         continue
                 else:
-                    result = task.run()
+                    result = task.run(data)
                 if(result):
                     logger.debug(task.__name__ + ' : Successful Execution')
                 else:

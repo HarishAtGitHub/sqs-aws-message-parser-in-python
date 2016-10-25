@@ -61,9 +61,9 @@ class RequestsConsumer(Consumer):
             return
         logger.info(" Message received from requests queue : %s" % body)
         if not tast_list:
-            results = TaskExecutor.execute()
+            results = TaskExecutor.execute(data=body)
         else:
-            results = TaskExecutor.execute(tast_list)
+            results = TaskExecutor.execute(data=body, tast_list=tast_list)
         success = True
         for i in results:
             for key, value in i.items():
