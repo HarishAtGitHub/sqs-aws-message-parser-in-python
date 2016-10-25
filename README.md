@@ -47,17 +47,26 @@ When a message is received from queue, all the tasks defined with default as fal
 
 Note: If you want to use th above tasks, make sure you change the tasks.xml appropriately. Then also export the following environment variables
 
-export SLACK_API_TOKEN=<token>
-export SLACK_CHANNEL=<channelname>
-export JIRA_SERVER_URL=<serverurl>
-export JIRA_USERNAME=<username>
-export JIRA_PASSWORD=<password>
-export JIRA_PROJECT_KEY=<projectkey>
-export JIRA_ISSUE_TYPE=<issuetype>
+    export SLACK_API_TOKEN=<token>
 
-export TRELLO_KEY=<trellokey>
-export TRELLO_AUTH_TOKEN=<trelloauthtoken>
-export TRELLO_BOARD_ID=<trelloboard>
-export TRELLO_LIST_NAME=<trellolistname>
+    export SLACK_CHANNEL=<channelname>
+
+    export JIRA_SERVER_URL=<serverurl>
+
+    export JIRA_USERNAME=<username>
+
+    export JIRA_PASSWORD=<password>
+
+    export JIRA_PROJECT_KEY=<projectkey>
+
+    export JIRA_ISSUE_TYPE=<issuetype>
+
+    export TRELLO_KEY=<trellokey>
+
+    export TRELLO_AUTH_TOKEN=<trelloauthtoken>
+
+    export TRELLO_BOARD_ID=<trelloboard>
+
+    export TRELLO_LIST_NAME=<trellolistname>
 
 Note: If you are using rabbitmq in place of  Amazons Simple Queuing, use this repository https://github.com/HarishAtGitHub/rabbitmq-message-parser-in-python
