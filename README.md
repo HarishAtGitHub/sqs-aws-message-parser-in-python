@@ -1,4 +1,8 @@
 # sqs-aws-message-parser-in-python
+
+(Design document is here : https://docs.google.com/document/d/1PGQsgCSt96Tda1MXLw-3GXoSmdL98mFHwhmuAJbTuEA/edit?usp=sharing
+)
+
 This project is to give a solution to message consumption from sqs in python and handle message processing failure cases and act in a more error-tolerant way.
 
 In this solution we have 
